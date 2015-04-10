@@ -13,8 +13,8 @@ public class Place {
     public Place(String name) {
         this.name = name;
         // Default lon,lat in New York City
-        this.longitude = 40.74;
-        this.latitude = -74.0;
+        this.longitude = 40.74; //this should be latitude
+        this.latitude = -74.0; //this should be longitude
     }
 
     public Place(String name, Double latitude, Double longitude) {
