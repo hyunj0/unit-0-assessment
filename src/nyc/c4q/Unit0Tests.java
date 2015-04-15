@@ -14,27 +14,6 @@ public class Unit0Tests {
      */
     public static void main (String args[]) {
       // Use main to test your methods
-        printHelloWorld();
-        System.out.println(returnPrimitiveBooleanTrue());
-        System.out.println(returnPrimitiveInt1729());
-        System.out.println(returnPrimitiveDoubleThreePointOneFour());
-        System.out.println(returnPrimitiveCharZ());
-        printSumOf1Upto10UsingForLoop();
-        printSumOf1Upto10000UsingForLoop();
-        System.out.println(isOdd(4));
-        System.out.println(isMultipleOfThree(4));
-        System.out.println(isOddAndIsMultipleOfThree(4));
-        System.out.println(repeatStringXTimes("hi", 5));
-        System.out.println(returnStringUntilQ("ubiquitous"));
-        System.out.println(declareAndReturnPersonNamedAda().getName());
-        System.out.println(declareAndReturnPersonNamedAlanTuringFromLondon().getName());
-        System.out.println(declareAndReturnPersonNamedAlanTuringFromLondon().getCity());
-        System.out.println(isFromLondon(declareAndReturnPersonNamedAlanTuringFromLondon()));
-        System.out.println(declareAndReturnArrayListOfThreePlaces().get(0).getLat());
-        System.out.println(declareAndReturnArrayListOfThreePlaces().get(1).getLat());
-        System.out.println(declareAndReturnArrayListOfThreePlaces().get(2).getLat());
-        System.out.println(declareAndReturnHashmapOfAlanTuringAndGraceHopper().get(0));
-        System.out.println(declareAndReturnHashmapOfAlanTuringAndGraceHopper().get(1));
     }
 
     public static void printHelloWorld() {
@@ -113,6 +92,9 @@ public class Unit0Tests {
         String endAtQ = "";
         for (int i = 0; i < input.length(); i++) {
             input.toLowerCase();
+            if (!(input.contains("q"))) {
+                break;
+            }
             if (input.charAt(i) == 'q')
                 break;
             else {
@@ -120,6 +102,7 @@ public class Unit0Tests {
                 continue;
             }
         }
+
         return endAtQ;
     }
 
@@ -159,12 +142,13 @@ public class Unit0Tests {
         HashMap<String, Person> people = new HashMap<String, Person>();
         people.put("Alan Turing", declareAndReturnPersonNamedAlanTuringFromLondon());
         Person graceHopper = new Person ("Grace Hopper");
+        graceHopper.setCity("Arlington");
         people.put("Grace Hopper", graceHopper);
         return people;
     }
 
     public static void changeTuringsCityToPrinceton(HashMap<String, Person> people) {
-        declareAndReturnHashmapOfAlanTuringAndGraceHopper().get(declareAndReturnPersonNamedAlanTuringFromLondon()).setCity("Princeton");
+        people.get("Alan Turing").setCity("Princeton");
     }
 
     // Bonus Problems
